@@ -3,6 +3,7 @@ import csv
 
 election_data = os.path.join('02-Homework','03-Python','Instructions','PyPoll', 'Resources', 'election_data.csv')
 election_data_csv = "election_data.csv"
+#election_analysis = os.path.join("analysis", "election_analysis.txt")
 
 total_votes = 0
 candidate_name = "" 
@@ -29,9 +30,10 @@ for person, vote_count in candidate_votes.items():
         winner_votes = vote_count
         winner = person
 
-dashline = "-------------------------"
-
 # results
+dashline = "-------------------------"
+#print("---------------------")
+
 print("Election Results")
 print(dashline)
 print(f"Total Votes: {total_votes}")
@@ -41,3 +43,7 @@ for person, vote_count in candidate_votes.items():
 print(dashline)
 print(f"Winner: {winner}")
 print(dashline)
+
+# Print the results and export the data to our text file
+#with open(election_analysis, "w") as txt_file:
+     #txt_file.write(output)

@@ -3,7 +3,7 @@ import csv
 
 budget_data = os.path.join('02-Homework','03-Python','Instructions','PyBank', 'Resources', 'budget_data.csv')
 #02-Homework\03-Python\Instructions\PyBank\Resources
-budget_analysis = os.path.join('02-Homework','03-Python','Instructions','PyBank', 'analysis', 'budget_analysis.txt')
+budget_analysis = os.path.join("./budget_analysis.txt")#"analysis", "budget_analysis.txt")
 
 budgetdata_csv = "budget_data.csv"
 total_months = 0
@@ -59,7 +59,7 @@ with open(budget_data) as budget_data_csv:
 
    # Export the results to text file
    with open(budget_analysis, "w") as txt_file:
-     txt_file.write(output)
+    txt_file.write(output)
   
 
 
