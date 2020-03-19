@@ -3,6 +3,7 @@ import csv
 
 budget_data = os.path.join('02-Homework','03-Python','Instructions','PyBank', 'Resources', 'budget_data.csv')
 #02-Homework\03-Python\Instructions\PyBank\Resources
+budget_analysis = os.path.join('02-Homework','03-Python','Instructions','PyBank', 'analysis', 'budget_analysis.txt')
 
 budgetdata_csv = "budget_data.csv"
 total_months = 0
@@ -44,21 +45,21 @@ with open(budget_data) as budget_data_csv:
    #We have to add 1 because month associated with change is the next month
    greatest_decrease_month=profit_loss_change_list.index(greatest_decrease)+1
    greatest_increase_month=profit_loss_change_list.index(greatest_increase)+1
-   print("Financial Analysis")
-
-   print("----------------------")
-
-   print(f"Total Months: {total_months}\n")
-
-   print(f"Total Profit/Losess: ${total_profit_loss}\n")
-
-   print(f"Average Change: ${round(sum(profit_loss_change_list)/len(profit_loss_change_list),2)}")
-
-   print(f"Greatest increase in Profits: {month_change[greatest_increase_month]} (${(str(greatest_increase))})")
-
-   print(f"Greatest decrease in Profits: {month_change[greatest_decrease_month]} (${(str(greatest_decrease))})")
+   output = (
+   f"\nFinancial Analysis\n"
+   f"----------------------------\n"
+   f"Total Months: {total_months}\n"
+   f"Total Profit/Losess: ${total_profit_loss}\n"
+   f"Average Change: ${round(sum(profit_loss_change_list)/len(profit_loss_change_list),2)}\n"
+   f"Greatest increase in Profits: {month_change[greatest_increase_month]} (${(str(greatest_increase))})\n"
+   f"Greatest decrease in Profits: {month_change[greatest_decrease_month]} (${(str(greatest_decrease))})\n")
     
-    
+   # Print the output (to terminal)
+   print(output)
+
+   # Export the results to text file
+   with open(budget_analysis, "w") as txt_file:
+     txt_file.write(output)
   
 
 
